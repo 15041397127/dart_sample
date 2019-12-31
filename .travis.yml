@@ -1,6 +1,6 @@
 language: dart
 script:
-  - dart lib/dart_sample.dart
+  - dart bin/dart_sample.dart
 after_success:
   - echo "success"
 after_script:

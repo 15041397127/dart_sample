@@ -13,17 +13,17 @@ class Meta{
   String name;
 
   //成员变量初始化语法糖
-  Meta(this.price,this.name);
+  Meta(this.name,this.price);
 }
 
 class Item extends Meta{
 
 
-  Item(name,price):super(name,price);
+  Item(name, price):super(name, price);
 
 
   //重载+运算符 将商品对象合并为套餐商品
-  Item operator+(Item item) => Item(name + item.name,price+item.price);
+  Item operator+(Item item) => Item(name + item.name , price + item.price);
 
 }
 
@@ -51,7 +51,7 @@ class ShoppingCart extends Meta with PrintHelper{
 
 
   //withCode初始化方法 使用语法糖和初始化列表进行赋值  并调用父类初始化方法
-  ShoppingCart.withCode({name,this.code}):date = DateTime.now(),super(name,'0');
+  ShoppingCart.withCode({name,this.code}):date = DateTime.now(),super(name,0);
 
   //?? 运算符表示为code不为null 则用原值 否则使用默认值"没有"
 
